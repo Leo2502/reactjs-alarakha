@@ -1,5 +1,6 @@
 import logo from './logo.png';
 import './App.css';
+import Navbar from './components/navbar/navbar';
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <header className="App-header">
         <h3>hecho • con • amor</h3>
         <img src={logo} alt="logo" />
+        <Navbar/>
         {/* className="App-logo" */}
         <ul>
           <li>Brocheros</li>

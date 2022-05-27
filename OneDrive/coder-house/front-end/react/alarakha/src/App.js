@@ -1,31 +1,13 @@
-import logo from './logo.png';
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles.css';
 import Navbar from './components/navbar/navbar';
+import { ItemListContainer } from './components/ItemListContainter/ItemListCointainer';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h3>hecho • con • amor</h3>
-        <img src={logo} alt="logo" />
         <Navbar/>
-        {/* className="App-logo" */}
-        <ul>
-          <li>Brocheros</li>
-          <li>Carteras</li>
-          <li>Mochilas</li>
-          <li>Neceseres</li>
-          <li>Portatodos</li>
-        </ul>
-        <a
-          className="App-link"
-          href="https://alarakha-neceseres.000webhostapp.com/index.html"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Visitanos!
-        </a>
-      </header>
+        <ItemListContainer/>
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import CartWidget from '../CartWidget/CartWidget'
+import { AiOutlineInstagram } from 'react-icons/ai'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './navbar.scss'
 import {Navbar, Container, Nav, NavDropdown} from 'react-bootstrap';
@@ -36,7 +37,7 @@ const NavbarComp = () => {
                     <Nav.Link href="#home">Contacto</Nav.Link>
                     <Nav.Link href="#home">Medios de Pago</Nav.Link>
                     <Nav.Link href="#home">Ventas al por mayor</Nav.Link>
-                    <Nav.Link href="#home">InstaTips</Nav.Link>
+                    <Nav.Link href="#home"><AiOutlineInstagram/>InstaTips</Nav.Link>
                     <Nav.Link href="#link"><CartWidget/></Nav.Link>
                 </Nav>
                 </Navbar.Collapse>

@@ -1,5 +1,5 @@
 import CartWidget from '../CartWidget/CartWidget'
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './navbar.scss'
 import {Navbar, Container, Nav, NavDropdown} from 'react-bootstrap';
 
@@ -42,7 +42,6 @@ const NavbarComp = () => {
                 </Navbar.Collapse>
             </Container>
             </Navbar>
-        <hr/>
     </header>
     )
 }

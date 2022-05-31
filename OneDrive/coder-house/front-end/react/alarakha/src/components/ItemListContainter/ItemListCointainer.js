@@ -1,3 +1,5 @@
+import ItemCount from '../ItemCount/ItemCount'
+
 export const ItemListContainer = ({producto}) => {
 
     return (
@@ -7,7 +9,7 @@ export const ItemListContainer = ({producto}) => {
 
             <p>Producto: {producto}</p>
             <p>Precio: $</p>
-
+            <ItemCount/>
         </section>
     )
 }

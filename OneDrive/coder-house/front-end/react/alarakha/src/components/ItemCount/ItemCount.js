@@ -13,17 +13,13 @@ const ItemCount = () => {
         }
     }
     const reducir = () => {
-        if (contador<1){
+        contador<1?
             setContador(contador)
-        } else {
-            setContador( contador - 1 )
-        }
+        :   setContador( contador - 1 )
     }
 
     const agregado = () => {
-        if (contador>0){
-            alert(`Agregaste ${contador} unidades del producto al carrito!`)
-        }
+        contador>0 && alert(`Agregaste ${contador} unidades del producto al carrito!`)
         setContador( contador - contador )
     }
     

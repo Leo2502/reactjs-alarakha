@@ -22,7 +22,7 @@ const ItemCount = () => {
 
     const agregado = () => {
         if (contador>0){
-            alert("Agregado al carrito!")
+            alert(`Agregaste ${contador} unidades del producto al carrito!`)
         }
         setContador( contador - contador )
     }

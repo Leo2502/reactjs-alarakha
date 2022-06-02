@@ -20,8 +20,8 @@ const NavbarComp = () => {
             </nav>
         </div> */}
         <Navbar bg="light" expand="lg">
-            <Container>
-                <Navbar.Brand href="#home">Alarakha neceseres</Navbar.Brand>
+            <Container className='d-flex justify-content-around'>
+                <Navbar.Brand href="#home" className='w-25 p-3'><img src='assets/multimedia/images/general/logo.png' alt="logo" width="100%"/></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">

@@ -1,11 +1,11 @@
 import { useState } from "react"
 import './ItemCount.scss'
 
-const ItemCount = () => {
+const ItemCount = ({item}) => {
 
     const [contador, setContador] = useState(0)
     const incrementar = () => {
-        if (contador>7){
+        if (contador>item.stock){
             setContador(contador)
             alert("Máximo de stock alcanzado")
         } else {
@@ -19,13 +19,13 @@ const ItemCount = () => {
     }
 
     const agregado = () => {
-        contador>0 && alert(`Agregaste ${contador} unidades del producto al carrito!`)
+        contador>0 && alert(`Agregaste ${contador} unidades del ${item.nombre} al carrito!`)
         setContador( contador - contador )
+        item.stock=item.stock-contador
     }
     
     return(
-        <div className="container my-5">
-            <p>Cantidad</p>
+        <div className="container mt-4">
             <div className="container_counter">
                 <button className="btn btn-danger" onClick={reducir}>-</button>
                 <p>{contador}</p>

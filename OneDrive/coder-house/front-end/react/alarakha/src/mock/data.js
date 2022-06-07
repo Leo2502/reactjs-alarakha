@@ -12,6 +12,7 @@ const productos = [
         img: "assets/multimedia/images/carteras/cartera-caveira.jpg",
         precio:1990,
         stock:0,
+        description:"caveira",
     },
     {
         id: 3,

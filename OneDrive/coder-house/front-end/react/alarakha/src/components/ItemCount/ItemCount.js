@@ -13,9 +13,7 @@ const ItemCount = ({item}) => {
         }
     }
     const reducir = () => {
-        contador<1?
-            setContador(contador)
-        :   setContador( contador - 1 )
+        contador>1 && setContador( contador - 1 )
     }
 
     const agregado = () => {
@@ -27,11 +25,11 @@ const ItemCount = ({item}) => {
     return(
         <div className="container mt-4">
             <div className="container_counter">
-                <button className="btn btn-danger" onClick={reducir}>-</button>
+                <button className="btn btn-unline-primary" onClick={reducir}>-</button>
                 <p>{contador}</p>
-                <button className="btn btn-success" onClick={incrementar}>+</button>
+                <button className="btn btn-primary" onClick={incrementar}>+</button>
             </div>
-            <button className="btn btn-primary" onClick={agregado}>Agregar al Carrito</button>
+            <button className="btn btn-success" onClick={agregado}>Agregar al Carrito</button>
         </div>
     )
 }

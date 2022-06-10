@@ -1,44 +1,30 @@
 import CartWidget from '../CartWidget/CartWidget'
-import { AiOutlineInstagram } from 'react-icons/ai'
+// import { AiOutlineInstagram } from 'react-icons/ai'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './navbar.scss'
 import {Navbar, Container, Nav, NavDropdown} from 'react-bootstrap';
+import { Link } from 'react-router-dom'
 
 const NavbarComp = () => {
     return (
     <header className="header">
-        {/* <div className="header_container">
-            <h1>Alarakha neceseres</h1>
-            <img src="../../multimedia/images/general/logo.png" alt="Logo"/>
-            <nav className="header_container_navbar">
-                <p>Catálogo</p>
-                <p>Contacto</p>
-                <p>Medios de Pago</p>
-                <p>Ventas al por mayor</p>
-                <p>InstaTips</p>
-                <CartWidget/>
-            </nav>
-        </div> */}
         <Navbar bg="light" expand="lg">
             <Container className='d-flex justify-content-around'>
-                <Navbar.Brand href="#home" className='w-25 p-3'><img src='assets/multimedia/images/general/logo.png' alt="logo" width="100%"/></Navbar.Brand>
+                <Navbar.Brand className='w-25 p-3'><Link to={"/"}><img src='../assets/multimedia/images/general/logo.png' alt="logo" width="100%"/></Link></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
                     <NavDropdown title="Catálogo" id="basic-nav-dropdown">
-                        <NavDropdown.Item href="#action/3.1">Brocheros</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.2">Carteras</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.3">Mochilas</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.3">Neceseres</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.3">Portatodo</NavDropdown.Item>
+                        <NavDropdown.Item><Link to={'categoria/brocheros'}>Brocheros</Link></NavDropdown.Item>
+                        <NavDropdown.Item><Link to={'categoria/carteras'}>Carteras</Link></NavDropdown.Item>
+                        <NavDropdown.Item><Link to={'categoria/mochilas'}>Mochilas</Link></NavDropdown.Item>
+                        <NavDropdown.Item><Link to={'categoria/neceseres'}>Neceseres</Link></NavDropdown.Item>
+                        <NavDropdown.Item><Link to={'categoria/portatodo'}>Portatodo</Link></NavDropdown.Item>
                         <NavDropdown.Divider />
-                        <NavDropdown.Item href="#action/3.4">Ver Todo</NavDropdown.Item>
+                        <NavDropdown.Item><Link to={'/'}>Ver todo</Link></NavDropdown.Item>
                     </NavDropdown>
-                    <Nav.Link href="#home">Contacto</Nav.Link>
-                    <Nav.Link href="#home">Medios de Pago</Nav.Link>
-                    <Nav.Link href="#home">Ventas al por mayor</Nav.Link>
-                    <Nav.Link href="#home"><AiOutlineInstagram/>InstaTips</Nav.Link>
-                    <Nav.Link href="#link"><CartWidget/></Nav.Link>
+                    <Link to={"/contacto"} className="header__navlink">Contacto</Link>
+                    <Link to={"/cart"}><CartWidget/></Link>
                 </Nav>
                 </Navbar.Collapse>
             </Container>

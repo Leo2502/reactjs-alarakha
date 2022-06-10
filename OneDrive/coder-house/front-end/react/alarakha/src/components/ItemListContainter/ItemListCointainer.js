@@ -2,17 +2,24 @@ import { useEffect, useState } from "react"
 import { Spinner } from "react-bootstrap"
 import { pedirData } from "../../mock/pedirData"
 import ItemList from "../ItemList/ItemList"
+import { useParams } from "react-router-dom"
 
 export const ItemListContainer = () => {
 
     const [items, setItems] = useState([])
     const [loading, setLoading] = useState(true)
 
+    const { categoryId } = useParams()
+
     useEffect(() => {
 
         pedirData()
-            .then((resp) => {
-                setItems( resp )
+            .then((res) => {
+                if (!categoryId) {
+                    setItems( res )
+                } else {
+                    setItems( res.filter((item) => item.categoria === categoryId) )
+                }
             })
             .catch((error) => {
                 console.log('ERROR', error)
@@ -20,7 +27,7 @@ export const ItemListContainer = () => {
             .finally(() => {
                 setLoading(false)
             })
-    }, [])
+    })
 
     return (
         <section className="container my-5">

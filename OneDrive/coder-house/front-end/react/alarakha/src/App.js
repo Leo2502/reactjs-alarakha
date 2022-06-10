@@ -5,6 +5,7 @@ import { ItemListContainer } from './components/ItemListContainter/ItemListCoint
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Contacto from './components/Contacto/Contacto';
+import './App.scss'
 
 function App() {
   return (

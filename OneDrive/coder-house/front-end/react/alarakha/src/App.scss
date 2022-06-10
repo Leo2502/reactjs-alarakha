@@ -1,0 +1,22 @@
+@font-face{
+    font-family: Poppins;
+    src: url('../public/assets/web-fonts/Poppins-Regular.ttf') format('truetype');
+}
+
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family: Poppins;
+    .enlace{
+        text-decoration: none;
+        color:black;
+        font-weight: normal;
+        &:hover{
+            color:rgb(248, 145, 163) !important;
+            transition: all 500ms ease-out;
+        }
+    }
+}

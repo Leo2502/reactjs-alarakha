@@ -1,12 +1,12 @@
 .header{
     background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 3;
     .header_container{
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 20px 0;
         .header_container_navbar{
             display: flex;
             width: 80%;

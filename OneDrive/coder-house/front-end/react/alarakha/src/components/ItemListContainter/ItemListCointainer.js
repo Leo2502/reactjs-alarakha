@@ -27,7 +27,7 @@ export const ItemListContainer = () => {
             .finally(() => {
                 setLoading(false)
             })
-    })
+    }, [categoryId])
 
     return (
         <section className="container my-5">

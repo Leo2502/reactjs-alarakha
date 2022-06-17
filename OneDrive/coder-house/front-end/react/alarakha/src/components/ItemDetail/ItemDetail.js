@@ -1,7 +1,8 @@
 import ItemCount from '../ItemCount/ItemCount'
 import './ItemDetail.scss'
 import { useNavigate, Link } from "react-router-dom"
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import { ContextoCarrito } from "../../context/CartContext"
 
 const ItemDetail = ({item}) => {
 
@@ -9,7 +10,7 @@ const ItemDetail = ({item}) => {
 
     const [cantidad, setCantidad] = useState(0)
 
-    const [included, setIncluded] = useState(false)
+    const {agregarAlCarrito} = useContext(ContextoCarrito)
 
     const handleAtras = () => {
         navigate(-1)
@@ -21,10 +22,9 @@ const ItemDetail = ({item}) => {
             ...item,
             cantidad
         }
-        setIncluded(true)
         setCantidad(0)
         item.stock=item.stock-cantidad
-        console.log(alCarrito)
+        agregarAlCarrito(alCarrito)
     }
 
     return (
@@ -33,14 +33,14 @@ const ItemDetail = ({item}) => {
             <img className='my-3 w-25' src={item.img} alt={item.nombre}/>
             <p className='my-3'>{item.description}</p>
             <h4 className='my-3'>Precio: ${item.precio}</h4>
-            { !included &&
-                <ItemCount 
+
+            <ItemCount 
                 max={item.stock}
                 contador={cantidad}
                 setContador={setCantidad}
                 nombre={item.nombre}
                 agregado={agregado}/>
-            }
+
             <Link to={'/cart'} className="btn btn-success my-3">Terminar compra</Link>
             <br/>
             <button className='btn btn-primary my-3' onClick={handleAtras}>VOLVER</button>

@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
 import { Spinner } from "react-bootstrap"
-import { pedirData } from "../../mock/pedirData"
 import ItemList from "../ItemList/ItemList"
 import { useParams } from "react-router-dom"
+import { collection, getDocs, query, where } from "firebase/firestore"
+import { dataBase } from '../../firebase/config'
 
 export const ItemListContainer = () => {
 
@@ -13,21 +14,24 @@ export const ItemListContainer = () => {
 
     useEffect(() => {
 
-        pedirData()
+        const productosR = collection(dataBase, "productos")
+        const q = categoryId ? query(productosR, where("categoria", "==", categoryId)) : productosR
+
+        getDocs(q)
             .then((res) => {
-                if (!categoryId) {
-                    setItems( res )
-                } else {
-                    setItems( res.filter((item) => item.categoria === categoryId) )
-                }
-            })
-            .catch((error) => {
-                console.log('ERROR', error)
+                const productos = res.docs.map((doc) => {
+                    return {
+                        id: doc.id,
+                        ...doc.data()
+                    }
+                })
+                setItems( productos )
             })
             .finally(() => {
                 setLoading(false)
             })
-    }, [categoryId])
+        
+        }, [categoryId])
 
     return (
         <section className="container my-5">

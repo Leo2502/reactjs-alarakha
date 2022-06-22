@@ -10,7 +10,7 @@ const ItemDetail = ({item}) => {
 
     const [cantidad, setCantidad] = useState(0)
 
-    const {agregarAlCarrito} = useContext(ContextoCarrito)
+    const {carrito, enCarrito, setCart, cantidadEnCarrito} = useContext(ContextoCarrito)
 
     const handleAtras = () => {
         navigate(-1)
@@ -18,13 +18,27 @@ const ItemDetail = ({item}) => {
 
     const agregado = () => {
         cantidad>0 && alert(`Agregaste ${cantidad} unidades del ${item.nombre} al carrito!`)
-        const alCarrito = {
-            ...item,
-            cantidad
+        if (enCarrito(item.id)){
+            const buscarProducto = carrito.map(producto=>{
+                if(producto.id===item.id){
+                    producto.cantidad=producto.cantidad+cantidad;
+                    item.stock=item.stock-producto.cantidad
+                    return producto;
+                } else {
+                    return producto;
+                }
+            })
+            setCart([...buscarProducto])
+        } else {
+            const alCarrito = {
+                ...item,
+                cantidad
+            }
+            item.stock=item.stock-cantidad
+            setCart([...carrito, alCarrito])
         }
         setCantidad(0)
-        item.stock=item.stock-cantidad
-        agregarAlCarrito(alCarrito)
+        console.log(cantidadEnCarrito()) 
     }
 
     return (
@@ -39,11 +53,16 @@ const ItemDetail = ({item}) => {
                 contador={cantidad}
                 setContador={setCantidad}
                 nombre={item.nombre}
-                agregado={agregado}/>
+                agregado={agregado}
+                id={item.id}/>
 
-            <Link to={'/cart'} className="btn btn-success my-3">Terminar compra</Link>
+            {
+                carrito.length>0 &&
+                <Link to={'/cart'} className="btn btn-success my-3">Terminar compra</Link>
+            }
+                
             <br/>
-            <button className='btn btn-primary my-3' onClick={handleAtras}>VOLVER</button>
+            <button className='btn btn-primary my-3' onClick={handleAtras}>Volver</button>
         </div>
     )
 }

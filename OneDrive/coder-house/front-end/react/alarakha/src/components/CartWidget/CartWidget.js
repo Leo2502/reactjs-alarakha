@@ -4,10 +4,10 @@ import { useCartContext } from '../../context/CartContext'
 
 const CartWidget = () => {
 
-    const {cantidadEnCarrito} = useCartContext()
+    const {cantidadEnCarrito, carrito} = useCartContext()
 
     return(
-        <Link to={'/cart'} className="enlace"><BsFillCartFill/>
+        <Link to={'/cart'} className={`enlace ${carrito.length === 0 ? 'invisible' :'visible'}`}><BsFillCartFill/>
         <span>{cantidadEnCarrito()}</span></Link>
     )
 }

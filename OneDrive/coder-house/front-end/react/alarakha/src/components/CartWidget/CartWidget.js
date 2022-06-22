@@ -7,7 +7,7 @@ const CartWidget = () => {
     const {cantidadEnCarrito, carrito} = useCartContext()
 
     return(
-        <Link to={'/cart'} className={`enlace ${carrito.length === 0 ? 'invisible' :'visible'}`}><BsFillCartFill/>
+        <Link to={'/cart'} className={`enlace ${carrito.length === 0 ? 'cartwidget-none' :'cartwidget'}`}><BsFillCartFill/>
         <span>{cantidadEnCarrito()}</span></Link>
     )
 }

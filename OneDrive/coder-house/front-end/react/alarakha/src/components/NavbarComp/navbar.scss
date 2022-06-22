@@ -13,6 +13,16 @@
             justify-content: space-between;
             align-items: center;
         }
+        .cartwidget{
+            font-size: 1em;
+            opacity: 1;
+            transition: all 500ms ease-in-out;
+        }
+        .cartwidget-none{
+            font-size: 0.01em;
+            opacity: 0;
+            transition: all 500ms ease-in-out;
+        }
     }
 }
 

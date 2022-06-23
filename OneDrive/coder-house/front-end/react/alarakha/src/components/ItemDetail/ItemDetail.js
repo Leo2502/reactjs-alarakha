@@ -48,17 +48,16 @@ const ItemDetail = ({item}) => {
             <p className='my-3'>{item.description}</p>
             <h4 className='my-3'>Precio: ${item.precio}</h4>
 
-            <ItemCount 
+            {
+                enCarrito(item.id) ?
+                <Link to={'/cart'} className="btn btn-success my-3">Terminar compra</Link> :
+                <ItemCount 
                 max={item.stock}
                 contador={cantidad}
                 setContador={setCantidad}
                 nombre={item.nombre}
                 agregado={agregado}
                 id={item.id}/>
-
-            {
-                carrito.length>0 &&
-                <Link to={'/cart'} className="btn btn-success my-3">Terminar compra</Link>
             }
                 
             <br/>

@@ -10,7 +10,7 @@ const ItemDetail = ({item}) => {
 
     const [cantidad, setCantidad] = useState(0)
 
-    const {carrito, enCarrito, setCart, cantidadEnCarrito} = useContext(ContextoCarrito)
+    const {carrito, enCarrito, setCart} = useContext(ContextoCarrito)
 
     const handleAtras = () => {
         navigate(-1)
@@ -37,8 +37,7 @@ const ItemDetail = ({item}) => {
             item.stock=item.stock-cantidad
             setCart([...carrito, alCarrito])
         }
-        setCantidad(0)
-        console.log(cantidadEnCarrito()) 
+        setCantidad(0) 
     }
 
     return (

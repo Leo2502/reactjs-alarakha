@@ -1,7 +1,7 @@
 .producto_container{
     display: flex;
     flex-flow: column wrap;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     .nombreProducto{
         text-transform: capitalize;
@@ -12,7 +12,7 @@
         transition: all 500ms ease-out;
     }
     &:hover{
-        h2{
+        h4{
         color:white;
         --d:100%;
         transition: all 500ms ease-out;

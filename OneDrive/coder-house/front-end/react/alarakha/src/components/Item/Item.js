@@ -9,9 +9,9 @@ const Item = ({item}) => {
 
     return (
         <div className='producto_container'>
-            <h2 className="mb-3 nombreProducto">{item.nombre}</h2>
-            <img src={item.img} alt={item.nombre} width="25%"/>
-            <h4 className="mt-3">Precio: ${item.precio}</h4>
+            <h4 className="mb-3 nombreProducto">{item.nombre}</h4>
+            <img src={item.img} alt={item.nombre} height="300vh"/>
+            <h5 className="mt-3">Precio: ${item.precio}</h5>
             <Link to={`/item/${item.id}`}>
                 <button className="btn btn-primary my-2">Ver más</button>
             </Link>

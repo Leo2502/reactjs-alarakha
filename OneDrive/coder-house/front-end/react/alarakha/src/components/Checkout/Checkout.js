@@ -5,6 +5,7 @@ import { collection, getDocs, addDoc, writeBatch, query, where, documentId } fro
 import { dataBase } from "../../firebase/config"
 import { Formik } from "formik"
 import * as Yup from 'yup'
+import { Link } from 'react-router-dom'
 
 const schema = Yup.object().shape({
     nombre: Yup.string()
@@ -80,6 +81,7 @@ const Checkout = () => {
                 <h2>Gracias por elegirnos!</h2>
                 <hr/>
                 <p>Su número de compra es: {ordenId}</p>
+                <Link to="/"><button className="btn btn-primary m-5">Finalizar</button></Link>
             </div>
         )
     }

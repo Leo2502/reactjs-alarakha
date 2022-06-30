@@ -7,13 +7,13 @@ import { Link } from 'react-router-dom'
 
 const NavbarComp = () => {
     return (
-    <header className="header">
-        <Navbar bg="light" expand="lg">
-            <Container className='header_container'>
-                <Navbar.Brand className='w-25 p-3'><Link to={"/"}><img src='../assets/multimedia/images/general/logo.png' alt="logo" width="100%"/></Link></Navbar.Brand>
+    <header data-aos="fade-down">
+        <Navbar className='header_container_navbar bg-leo' expand="lg">
+            <Container className='d-flex justify-content-between'>
+                <Navbar.Brand className='navbar__logo animate__animated animate__bounce'><Link to={"/"}><img src='../assets/multimedia/images/general/logo.png' alt="logo" className='w-100'/></Link></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="me-auto">
+                <Nav className="header_container_navbar--links__container">
                     <NavDropdown className='enlace' title="Catálogo" id="basic-nav-dropdown">
                         <NavDropdown.Item><Link to={'categoria/brocheros'} className='enlace'>Brocheros</Link></NavDropdown.Item>
                         <NavDropdown.Item><Link to={'categoria/carteras'} className='enlace'>Carteras</Link></NavDropdown.Item>

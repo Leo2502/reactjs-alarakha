@@ -1,30 +1,47 @@
-.header{
-    background-color: white;
+@import '../../scss/extends';
+
+header{
     position: sticky;
     top: 0;
     z-index: 3;
-    .header_container{
-        display: flex;
-        justify-content: space-between;
+    @extend %padding-hf;
+    @extend %fondo-hf;
+    .bg-leo{
+        @extend %fondo-hf;
+    }
+    .header_container_navbar{
         align-items: center;
-        .header_container_navbar{
-            display: flex;
-            width: 80%;
-            justify-content: space-between;
-            align-items: center;
+        font-weight: bolder;
+        .navbar__logo{
+            @media screen and (max-width:480px){
+                width: 40%;
+            }
+            @media screen and (min-width:481px) and (max-width:960px){
+                width: 30%;
+            }
+            width: 20%;
         }
-        .cartwidget{
-            font-size: 1em;
+        .header_container_navbar--links__container{
+            display: flex;
+            align-items: center;
+            .dropdown-menu{
+                @extend %fondo-hf;
+                border-radius: 0.4em;
+                border-top: none;
+            }
+            .enlace{
+                margin:0.9em;
+            }
+            .cartwidget{
+                font-size: 1em;
             opacity: 1;
             transition: all 500ms ease-in-out;
-        }
-        .cartwidget-none{
-            font-size: 0.01em;
-            opacity: 0;
-            transition: all 500ms ease-in-out;
+            }
+            .cartwidget-none{
+                font-size: 0.01em;
+                opacity: 0;
+                transition: all 500ms ease-in-out;
+            }
         }
     }
 }
-
-
-

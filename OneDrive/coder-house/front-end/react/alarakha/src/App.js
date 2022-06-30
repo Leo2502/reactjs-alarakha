@@ -9,6 +9,7 @@ import './App.scss'
 import Cart from './components/Cart/Cart'
 import { CartProvider } from './context/CartContext';
 import Checkout from './components/Checkout/Checkout';
+import Footer from './components/Footer/Footer'
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/cart" element={ <Cart/> } />
           <Route path="*" element={ <Navigate to={"/"} /> } />
         </Routes>
+        <Footer/>
     </div>
     </BrowserRouter>
     </CartProvider>

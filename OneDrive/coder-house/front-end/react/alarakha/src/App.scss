@@ -11,7 +11,7 @@
 @import './scss/extends.scss';
 
 body{
-    font-family: Poppins;
+    font-family: Poppins !important;
     .enlace{
         text-decoration: none;
         color:black;

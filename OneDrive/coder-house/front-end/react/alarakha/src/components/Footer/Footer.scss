@@ -10,7 +10,7 @@ footer{
         @media screen and (max-width:480px){
             @include flexbox(flex, column wrap, space-around);
         }
-        @include flexbox(flex, row nowrap, space-between);
+        @include flexbox(flex, row nowrap, space-around);
         .menu__footer__item{
             @include flexbox(flex, column wrap, flex-start);
             align-content: space-between;
@@ -34,25 +34,23 @@ footer{
             }
         }
         .menu__footer__item--redes{
-            justify-content: space-between;
-            align-items:center;
-            .menu__footer__item__iconos{
+            @include flexbox(flex, row nowrap, space-around);
+            a{
                 padding: 0.6em;
                 @extend %transition-general;
                 &:hover{
                     @extend %scale125;
                 }
             }
-            .fa-map-marker-alt:hover{
-                @extend %scale125;
-            }
         }
         .menu__footer__item--contacto{
+            @include flexbox(flex, row nowrap, space-between);
             @media screen and (max-width:480px){
                 display:none;
             }
-            i{
-                margin: 0.5em;
+            a{
+                font-size: 1.5em;
+                margin: 1em;
                 &:hover{
                     @extend %scale125;
                     @extend %transition-general;
@@ -69,13 +67,11 @@ footer{
             @extend %hover-general;
             @extend %transition-general;
             z-index: 2;
+            font-size: 2em;
             &:visited{
                 @extend %hover-general;
             }
-            // .fa-arrow-circle-up{
-                width: 30%;
             /* Fin de edición de botón para subir a inicio */
-            // }
         }
         // Fin de edición de botón para subir a inicio
     }
@@ -85,5 +81,8 @@ footer{
             margin-top:1em;
         }
         width: 13%;
+    }
+    .footer__copyrigth{
+        font-size: 0.75em;
     }
 }

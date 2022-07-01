@@ -27,7 +27,7 @@ const NavbarComp = () => {
                     <Link to={"/medios"} className="header__navlink enlace enlace-prin">Medios de Pago</Link>
                     <a className="header__navlink enlace enlace-prin" href="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Falarakhaneceseres%2Fposts%2F4078876035479333&show_text=true&width=500" target="_blank" rel="noopener noreferrer">Ventas al por mayor</a>
                     <a className="header__navlink enlace enlace-prin" href="https://www.instagram.com/stories/highlights/17909957731855954/" target="_blank" rel="noopener noreferrer"><BsInstagram/> Instatips</a>
-                    <Link to={"/cart"} className='enlace enlace-prin'><CartWidget/></Link>
+                    <CartWidget/>
                 </Nav>
                 </Navbar.Collapse>
             </Container>

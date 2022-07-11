@@ -7,9 +7,9 @@ import CartWidget from '../CartWidget/CartWidget'
 
 const NavbarComp = () => {
     return (
-    <header data-aos="fade-down">
+    <header>
         <Navbar className='header_container_navbar bg-leo' expand="lg">
-            <Container className='d-flex justify-content-between m-0'>
+            <Container className='d-flex justify-content-between'>
                 <Navbar.Brand className='navbar__logo animate__animated animate__bounce'><Link to={"/"}><img src='../assets/multimedia/images/general/logo.png' alt="logo" className='w-100'/></Link></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">

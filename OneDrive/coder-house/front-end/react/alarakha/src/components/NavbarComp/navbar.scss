@@ -10,6 +10,7 @@ header{
         @extend %fondo-hf;
     }
     .header_container_navbar{
+        display: flex;
         align-items: center;
         font-weight: bolder;
         @media screen and (max-width:990px){

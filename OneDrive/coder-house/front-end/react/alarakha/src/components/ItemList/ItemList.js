@@ -5,7 +5,7 @@ const ItemList = ( {items} ) => {
 
     return (
         <div>
-            <h2>Catálogo</h2>
+            <h1>Catálogo</h1>
             <hr/>
             <div className="itemContainer">
             {

@@ -1,6 +1,7 @@
 import './Footer.scss'
 import { BsInstagram, BsFacebook, BsFillArrowUpCircleFill, BsWhatsapp } from 'react-icons/bs'
 import { BiMailSend, BiMap } from 'react-icons/bi'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
     return(
@@ -10,7 +11,7 @@ const Footer = () => {
         <div className="menu__footer__item">
         <h4 className="menu__footer__item__title fs-5">Tienda</h4>
         <ul className="m-0 mb-4 p-0">
-            <li>Contacto</li>
+            <Link className='enlace' to={"/contacto"}>Contacto</Link>
             <li>Medios de Pago</li>
             <li>Cambios y devoluciones</li>
             <li>Sobre envíos</li>

@@ -8,7 +8,7 @@ const CartVacio = () => {
             <hr/>
             <p>Por favor, agrega productos para continuar.</p>
 
-            <Link to="/categorias" className="btn btn-success my-2">Ver productos disponibles</Link>
+            <Link to="/categorias" className="btn btn-success my-2 mx-2">Ver productos disponibles</Link>
             <Link to="/" className="btn btn-primary my-2">Volver al Home</Link>
         </div>
     )

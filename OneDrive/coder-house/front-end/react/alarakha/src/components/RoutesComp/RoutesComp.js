@@ -7,6 +7,8 @@ import Contacto from '../Contacto/Contacto';
 import Home from '../Home/Home';
 import Footer from '../Footer/Footer'
 import Medios from '../Medios/Medios'
+import { Nosotros } from '../Nosotros/Nosotros'
+import Tienda from '../Tienda/Tienda'
 import NavbarComp from '../NavbarComp/navbarComp';
 
 const RoutesComp = () => {
@@ -22,6 +24,8 @@ const RoutesComp = () => {
               <Route path='/checkout' element={<Checkout/>} />
               <Route path="/contacto" element={ <Contacto/> } />
               <Route path="/medios" element={ <Medios/> } />
+              <Route path="/nosotros" element={ <Nosotros/> } />
+              <Route path="/tienda" element={ <Tienda/> } />
               <Route path="/cart" element={ <Cart/> } />
               <Route path="*" element={ <Navigate to={"/"} /> } />
             </Routes>

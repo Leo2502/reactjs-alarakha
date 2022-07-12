@@ -11,22 +11,16 @@ const Footer = () => {
         <div className="menu__footer__item">
         <h4 className="menu__footer__item__title fs-5">Tienda</h4>
         <ul className="m-0 mb-4 p-0">
-            <Link className='enlace' to={"/contacto#"}>Contacto</Link>
-            <li>Medios de Pago</li>
-            <li>Cambios y devoluciones</li>
-            <li>Sobre envíos</li>
+            <li><Link className='enlace' to={"/contacto"}>Contacto</Link></li>
+            <li><Link className='enlace' to={"/medios"}>Medios de Pago</Link></li>
+            <li><Link className='enlace' to={"/tienda"}>Tienda</Link></li>
         </ul>
         </div>
 
 
         {/* Sección Sobre Nosotros */}
         <div className="menu__footer__item">
-        <h4 className="menu__footer__item__title fs-5">Sobre Nosotros</h4>
-        <ul className="m-0 mb-4 p-0">
-            <li>Nuestra Historia</li>
-            <li>Bio</li>
-            <li>Producción</li>
-        </ul>
+        <h4 className="menu__footer__item__title fs-5"><Link className='enlace' to={"/nosotros"}>Sobre Nosotros</Link></h4>
         </div>
 
         

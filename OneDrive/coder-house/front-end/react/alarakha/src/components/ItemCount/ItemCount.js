@@ -23,12 +23,12 @@ const ItemCount = ({max, contador, setContador, agregado}) => {
     }
     
     return(
-        <div className="container mt-4">
+        <div className="mt-4">
 
             <div className="container_counter">
                 <button className="btn btn-unline-primary" onClick={reducir} disabled={contador < 0}>-</button>
                 <p>{contador}</p>
-                <button className="btn btn-primary" onClick={incrementar} disabled={contador === max}>+</button>
+                <button className="btn btn-danger" onClick={incrementar} disabled={contador === max}>+</button>
             </div>
 
             <button className="btn btn-success" onClick={agregado} disabled={contador === 0}>Agregar al carrito</button>

@@ -31,7 +31,7 @@ const schema = Yup.object().shape({
 
 const Checkout = () => {
 
-    const { carrito, totalCarrito, vaciarCarrito } = useCartContext()
+    const { carrito, totalCarrito, vaciarCarrito, } = useCartContext()
 
     const [ordenId, setOrdenId] = useState(null)
 

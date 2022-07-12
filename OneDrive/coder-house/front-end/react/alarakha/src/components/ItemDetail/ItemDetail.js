@@ -10,7 +10,7 @@ const ItemDetail = ({item}) => {
 
     const [cantidad, setCantidad] = useState(0)
 
-    const {carrito, enCarrito, setCart} = useContext(ContextoCarrito)
+    const {carrito, enCarrito, setCart, guardarStorage} = useContext(ContextoCarrito)
 
     const handleAtras = () => {
         navigate(-1)
@@ -37,13 +37,35 @@ const ItemDetail = ({item}) => {
             item.stock=item.stock-cantidad
             setCart([...carrito, alCarrito])
         }
-        setCantidad(0) 
+        setCantidad(0)
+        guardarStorage("Carrito", carrito)
     }
 
+    // const [ofertas, setOfertas] = useState([])
+
+    // if (enCarrito(item.id)){
+    //     const buscarProducto = carrito.map(producto=>{
+    //         if(producto.id!==item.id){
+    //             return producto;
+    //         } else {
+    //             return producto;
+    //         }
+    //     })
+    //     setOfertas([...buscarProducto])
+    // } else {
+    //     const ofrecer = {
+    //         ...item
+    //     }
+    //     setOfertas([...ofertas, ofrecer])
+    // }
+    // console.log(ofertas)
+
+
     return (
-        <div className="container my-5">
+        <div>
+        <div className="productos_detail_container my-2">
             <h2 className="nombreProducto">{item.nombre}</h2>
-            <img className='my-3 w-25' src={item.img} alt={item.nombre}/>
+            <img className='my-3' src={item.img} alt={item.nombre}/>
             <p className='my-3'>{item.description}</p>
             <h4 className='my-3'>Precio: ${item.precio}</h4>
 
@@ -54,14 +76,16 @@ const ItemDetail = ({item}) => {
                 nombre={item.nombre}
                 agregado={agregado}
                 id={item.id}/>
-
-            {
-                carrito.length >0 &&
-                <Link to={'/cart'} className="btn btn-success my-3">Terminar compra</Link>
-            }
                 
             <br/>
-            <button className='btn btn-primary my-3' onClick={handleAtras}>Volver</button>
+            </div>
+            <div>
+            {
+                carrito.length >0 &&
+                <Link to={'/cart'} className="btn btn-success">Terminar compra</Link>
+            }
+            </div>
+            <button className='button_atras mt-4' onClick={handleAtras}>Atrás</button>
         </div>
     )
 }

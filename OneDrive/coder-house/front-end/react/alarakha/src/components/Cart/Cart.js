@@ -3,6 +3,7 @@ import { BsTrash } from "react-icons/bs"
 import './Cart.scss'
 import { Link } from 'react-router-dom'
 import CartVacio from './CartVacio'
+import CarouselMain from "../Home/HomeCarousel"
 
 const Cart = () => {
 
@@ -17,22 +18,35 @@ const Cart = () => {
 
             {   
                 carrito.map((item) => (
-                <div key={item.id} className="my-2">
+                <div>
+                <div key={item.id} className="cart_producto_container my-2">
+                    <div>
                     <h5 className="nombreProducto">{item.nombre}</h5>
                     <p>Cantidad: {item.cantidad}</p>
                     <h6>Precio: ${item.precio * item.cantidad}</h6>
+                    </div>
+                    <img src={item.img} alt={item.nombre}/>
                     <button onClick={() => eliminarItem(item.id)} className="btn btn-danger"><BsTrash/></button>
-                    <hr/>
+                </div>
+                <hr/>
                 </div>
                 ))
             }
 
 
-            <h4>Total a pagar: ${totalCarrito()}</h4>
+            <h4 className="mt-5">Total a pagar: ${totalCarrito()}</h4>
+            <div className="mt-5">
+            <Link to="/categorias"><button className="btn btn-primary m-1">Continuar comprando</button></Link>
+            <Link to="/checkout" className="btn btn-success m-1">Terminar compra</Link>
+            <button onClick={vaciarCarrito} className="btn btn-danger m-1">Vaciar carrito</button>
+            </div>
 
-            <button onClick={vaciarCarrito} className="btn btn-danger">Vaciar carrito</button>
-            <Link to="/categorias"><button className="btn btn-primary m-5">Continuar comprando</button></Link>
-            <Link to="/checkout" className="btn btn-success m-5">Terminar compra</Link>
+            <hr/>
+
+            <div>
+                <h4>También puede interesarte:</h4>
+                <CarouselMain/>
+            </div>
         </div>
     )
 }

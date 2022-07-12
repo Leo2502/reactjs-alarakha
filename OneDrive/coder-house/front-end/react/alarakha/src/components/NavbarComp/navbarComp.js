@@ -11,6 +11,7 @@ const NavbarComp = () => {
         <Navbar className='header_container_navbar bg-leo' expand="lg">
             <Container className='d-flex justify-content-between'>
                 <Navbar.Brand className='navbar__logo animate__animated animate__bounce'><Link to={"/"}><img src='../assets/multimedia/images/general/logo.png' alt="logo" className='w-100'/></Link></Navbar.Brand>
+                <CartWidget/>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="header_container_navbar--links__container">
@@ -29,7 +30,6 @@ const NavbarComp = () => {
                     <a className="header__navlink enlace enlace-prin" href="https://www.instagram.com/stories/highlights/17909957731855954/" target="_blank" rel="noopener noreferrer"><BsInstagram/> Instatips</a>
                 </Nav>
                 </Navbar.Collapse>
-                <CartWidget/>
             </Container>
             </Navbar>
     </header>

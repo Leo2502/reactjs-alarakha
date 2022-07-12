@@ -4,6 +4,7 @@ import ItemList from "../ItemList/ItemList"
 import { useParams } from "react-router-dom"
 import { collection, getDocs, query, where } from "firebase/firestore"
 import { dataBase } from '../../firebase/config'
+import './ItemListContainer.scss'
 
 export const ItemListContainer = () => {
 
@@ -39,10 +40,10 @@ export const ItemListContainer = () => {
         }, [categoryId])
 
     return (
-        <section className="container my-5">
+        <section>
             {
                 loading
-                ?   <Spinner animation="border" role="status"/>
+                ?   <div className="spinner"><Spinner animation="border" role="status"/></div>
                 :  <ItemList items={items}/>
             }
         </section>

@@ -5,7 +5,7 @@ import './HomeGrid.scss'
 function CarouselMain() {
   return (
     <div className='container_carousel mt-2'>
-    <h2 class="fs-1">Nuestra Selección</h2>
+    <h3 class="fs-1">Nuestra Selección</h3>
     <Carousel className='carousel'>
       <Carousel.Item interval={1000}>
         <img
